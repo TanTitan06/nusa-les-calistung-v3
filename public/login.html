@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk Portal - Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/index.html" class="brand-title">Nusa Les Calistung</a>
+        <div class="header-actions">
+            <a href="/index.html" class="btn btn-outline btn-sm">&larr; Beranda</a>
+            <a href="/daftar.html" class="btn btn-terracotta btn-sm">Daftar Online</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="auth-split">
+            <aside class="auth-aside">
+                <div>
+                    <span class="brand-badge" style="margin-bottom: 14px; display: inline-block;">Akses Terpadu</span>
+                    <h2>Portal Pengajar & Orang Tua</h2>
+                    <p>Masuk menggunakan akun terdaftar untuk memantau jurnal perkembangan belajar, absensi pertemuan, dan riwayat administrasi.</p>
+                </div>
+                <small style="color: #94a3b8;">Nusa Les Calistung &bull; Sistem Pemantauan</small>
+            </aside>
+            <div class="auth-main">
+                <h3 style="margin-bottom: 16px; color: var(--navy-dark);">Masuk ke Akun Anda</h3>
+                <div id="alertLogin" class="alert hidden"></div>
+                <form id="formLogin">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px;">Masuk Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Sangatta Selatan, Kutai Timur</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/public.js"></script>
+</body>
+</html>

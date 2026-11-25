@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pra-Pendaftaran Online - Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/index.html" class="brand-title">Nusa Les Calistung</a>
+        <div class="header-actions">
+            <a href="/index.html" class="btn btn-outline btn-sm">&larr; Kembali ke Beranda</a>
+            <a href="/login.html" class="btn btn-primary btn-sm">Masuk Portal</a>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="auth-split">
+            <aside class="auth-aside">
+                <div>
+                    <span class="brand-badge" style="margin-bottom: 14px; display: inline-block;">Penerimaan Murid</span>
+                    <h2>Alur Pendaftaran Murid Baru</h2>
+                    <p>Isi data calon murid secara lengkap. Pengajar akan memverifikasi pendaftaran dan menghubungi nomor WhatsApp Anda.</p>
+                    <ul>
+                        <li>1. Isi formulir pra-pendaftaran online</li>
+                        <li>2. Verifikasi jadwal oleh pengajar</li>
+                        <li>3. Aktivasi akun portal pemantauan orang tua</li>
+                    </ul>
+                </div>
+                <small style="color: #94a3b8;">Sangatta Selatan &bull; Kelas Tatap Muka</small>
+            </aside>
+            <div class="auth-main">
+                <h3 style="margin-bottom: 16px; color: var(--navy-dark);">Formulir Pra-Pendaftaran</h3>
+                <div id="alertDaftar" class="alert hidden"></div>
+                <form id="formDaftar">
+                    <div class="form-group">
+                        <label for="nama_calon_murid">Nama Lengkap Calon Murid</label>
+                        <input type="text" id="nama_calon_murid" name="nama_calon_murid" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal_lahir">Tanggal Lahir Anak</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat_murid">Alamat Lengkap</label>
+                        <textarea id="alamat_murid" name="alamat_murid" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_orang_tua">Nama Orang Tua / Wali</label>
+                        <input type="text" id="nama_orang_tua" name="nama_orang_tua" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="no_telepon">Nomor WhatsApp / Telepon Aktif</label>
+                        <input type="text" id="no_telepon" name="no_telepon" class="form-control" placeholder="081234567890" required>
+                    </div>
+                    <button type="submit" class="btn btn-terracotta" style="width: 100%;">Kirim Data Pendaftaran</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Sangatta Selatan, Kutai Timur</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/public.js"></script>
+</body>
+</html>

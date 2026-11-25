@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murid & Ortu - Admin Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="murid">
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/admin/dashboard.html" class="brand-title">Nusa Les Calistung <span class="brand-badge">Panel Pengelola</span></a>
+        <div class="header-actions">
+            <a href="/index.html" target="_blank" class="btn btn-outline btn-sm">Lihat Web Publik</a>
+            <button type="button" onclick="App.logout()" class="btn btn-danger btn-sm">Logout</button>
+        </div>
+    </div>
+    <nav class="tab-bar">
+        <div class="container">
+            <ul class="tab-list">
+                <li><a href="/admin/dashboard.html">Beranda</a></li>
+                <li><a href="/admin/murid.html" class="active">Murid & Ortu</a></li>
+                <li><a href="/admin/verifikasi.html">Verifikasi</a></li>
+                <li><a href="/admin/kehadiran.html">Kehadiran</a></li>
+                <li><a href="/admin/jurnal.html">Jurnal</a></li>
+                <li><a href="/admin/pembayaran.html">Pembayaran</a></li>
+                <li><a href="/admin/pengaturan.html">Info Web</a></li>
+                <li><a href="/admin/akun.html">Akun</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div id="alertAdmin" class="alert hidden"></div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>Daftar Murid Aktif & Orang Tua</span>
+                <div class="inline-form">
+                    <form id="formCariMurid" class="inline-form">
+                        <input type="text" id="inputCariMurid" class="form-control" style="width: 240px; padding: 6px 10px;" placeholder="Cari murid / orang tua...">
+                        <button type="submit" class="btn btn-outline btn-sm">Cari</button>
+                        <button type="button" id="btnResetCari" class="btn btn-outline btn-sm hidden">Reset</button>
+                    </form>
+                    <button type="button" class="btn btn-terracotta btn-sm" onclick="toggleModalMurid(true)">+ Tambah Murid</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Murid</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Alamat</th>
+                            <th>Orang Tua</th>
+                            <th>No. Telepon</th>
+                            <th>Akun Login</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyMurid">
+                        <tr><td colspan="8">Memuat data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="modalTambahMurid" class="modal-overlay hidden">
+    <div class="modal-card" style="max-width: 520px; max-height: 90vh; overflow-y: auto;">
+        <div class="card-header">
+            <span>Tambah Murid & Orang Tua Baru</span>
+            <button type="button" class="btn btn-outline btn-sm" onclick="toggleModalMurid(false)">&times;</button>
+        </div>
+        <form id="formTambahMurid">
+            <div class="form-group">
+                <label>Nama Lengkap Murid</label>
+                <input type="text" name="nama_murid" class="form-control" required>
+            </div>
+            <div class="grid-2" style="gap: 10px;">
+                <div class="form-group">
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="tanggal_lahir" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>No. Telepon / WA</label>
+                    <input type="text" name="no_telepon" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Alamat</label>
+                <input type="text" name="alamat_murid" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Nama Orang Tua / Wali</label>
+                <input type="text" name="nama_orang_tua" class="form-control" required>
+            </div>
+            <div class="grid-2" style="gap: 10px;">
+                <div class="form-group">
+                    <label>Username Ortu (Opsional)</label>
+                    <input type="text" name="username_ortu" class="form-control" placeholder="ortu_budi">
+                </div>
+                <div class="form-group">
+                    <label>Password Ortu</label>
+                    <input type="password" name="password_ortu" class="form-control" placeholder="Min. 6 karakter">
+                </div>
+            </div>
+            <div class="btn-group" style="justify-content: flex-end; margin-top: 10px;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="toggleModalMurid(false)">Batal</button>
+                <button type="submit" class="btn btn-primary btn-sm">Simpan Data</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Panel Administrasi Pengajar</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/admin.js"></script>
+</body>
+</html>

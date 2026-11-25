@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - Admin Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="pembayaran">
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/admin/dashboard.html" class="brand-title">Nusa Les Calistung <span class="brand-badge">Panel Pengelola</span></a>
+        <div class="header-actions">
+            <a href="/index.html" target="_blank" class="btn btn-outline btn-sm">Lihat Web Publik</a>
+            <button type="button" onclick="App.logout()" class="btn btn-danger btn-sm">Logout</button>
+        </div>
+    </div>
+    <nav class="tab-bar">
+        <div class="container">
+            <ul class="tab-list">
+                <li><a href="/admin/dashboard.html">Beranda</a></li>
+                <li><a href="/admin/murid.html">Murid & Ortu</a></li>
+                <li><a href="/admin/verifikasi.html">Verifikasi</a></li>
+                <li><a href="/admin/kehadiran.html">Kehadiran</a></li>
+                <li><a href="/admin/jurnal.html">Jurnal</a></li>
+                <li><a href="/admin/pembayaran.html" class="active">Pembayaran</a></li>
+                <li><a href="/admin/pengaturan.html">Info Web</a></li>
+                <li><a href="/admin/akun.html">Akun</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div id="alertAdmin" class="alert hidden"></div>
+
+        <div class="workspace-split">
+            <!-- KIRI: RIWAYAT PEMBAYARAN -->
+            <div class="card">
+                <div class="card-header">Riwayat Transaksi Pembayaran</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No. Transaksi</th>
+                                <th>Tanggal</th>
+                                <th>Nama Murid</th>
+                                <th>Jenis</th>
+                                <th>Nominal</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyBayar">
+                            <tr><td colspan="6">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- KANAN: FORM INPUT PEMBAYARAN -->
+            <div class="card card-accent-terracotta">
+                <div class="card-header">Catat Pembayaran Baru</div>
+                <form id="formTambahBayar">
+                    <div class="form-group">
+                        <label>Pilih Murid</label>
+                        <select id="selectMuridBayar" name="id_murid" class="form-control" required>
+                            <option value="">-- Pilih Murid --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal Pembayaran</label>
+                        <input type="date" id="tglBayar" name="tanggal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Pembayaran</label>
+                        <select name="jenis_pembayaran" class="form-control" required>
+                            <option value="Bulanan">Iuran Bulanan (Rp 100.000)</option>
+                            <option value="Pendaftaran">Biaya Pendaftaran (Rp 150.000)</option>
+                            <option value="Perlengkapan Buku">Perlengkapan Buku & Pensil (Rp 20.000)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nominal (Rp)</label>
+                        <input type="number" name="jumlah" min="0" step="1000" value="100000" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Status Pembayaran</label>
+                        <select name="status_pembayaran" class="form-control">
+                            <option value="Lunas">Lunas</option>
+                            <option value="Belum Lunas">Belum Lunas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-terracotta" style="width: 100%;">Simpan Pembayaran</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Panel Administrasi Pengajar</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Pembelajaran - Admin Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="jurnal">
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/admin/dashboard.html" class="brand-title">Nusa Les Calistung <span class="brand-badge">Panel Pengelola</span></a>
+        <div class="header-actions">
+            <a href="/index.html" target="_blank" class="btn btn-outline btn-sm">Lihat Web Publik</a>
+            <button type="button" onclick="App.logout()" class="btn btn-danger btn-sm">Logout</button>
+        </div>
+    </div>
+    <nav class="tab-bar">
+        <div class="container">
+            <ul class="tab-list">
+                <li><a href="/admin/dashboard.html">Beranda</a></li>
+                <li><a href="/admin/murid.html">Murid & Ortu</a></li>
+                <li><a href="/admin/verifikasi.html">Verifikasi</a></li>
+                <li><a href="/admin/kehadiran.html">Kehadiran</a></li>
+                <li><a href="/admin/jurnal.html" class="active">Jurnal</a></li>
+                <li><a href="/admin/pembayaran.html">Pembayaran</a></li>
+                <li><a href="/admin/pengaturan.html">Info Web</a></li>
+                <li><a href="/admin/akun.html">Akun</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div id="alertAdmin" class="alert hidden"></div>
+
+        <div class="workspace-split">
+            <!-- KIRI: RIWAYAT JURNAL -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Riwayat Perkembangan Belajar</span>
+                    <select id="filterMuridJurnal" class="form-control" style="width: auto; padding: 5px 10px;">
+                        <option value="0">Semua Murid</option>
+                    </select>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Nama Murid</th>
+                                <th>Jilid</th>
+                                <th>Halaman</th>
+                                <th>Catatan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyJurnal">
+                            <tr><td colspan="6">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- KANAN: FORM INPUT JURNAL -->
+            <div class="card card-accent-terracotta">
+                <div class="card-header">Input Jurnal Baru</div>
+                <form id="formTambahJurnal">
+                    <div class="form-group">
+                        <label>Pilih Murid</label>
+                        <select id="selectMuridJurnal" name="id_murid" class="form-control" required>
+                            <option value="">-- Pilih Murid --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal Pembelajaran</label>
+                        <input type="date" id="tglJurnal" name="tanggal" class="form-control" required>
+                    </div>
+                    <div class="grid-2" style="gap: 10px;">
+                        <div class="form-group">
+                            <label>Jilid / Buku</label>
+                            <select name="jilid" class="form-control" required>
+                                <option value="Jilid 1">Jilid 1</option>
+                                <option value="Jilid 2">Jilid 2</option>
+                                <option value="Jilid 3">Jilid 3</option>
+                                <option value="Jilid 4">Jilid 4</option>
+                                <option value="Jilid 5">Jilid 5</option>
+                                <option value="Jilid 6">Jilid 6</option>
+                                <option value="Jilid 7">Jilid 7</option>
+                                <option value="Mengaji">Mengaji</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Halaman</label>
+                            <input type="number" name="halaman" min="1" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Catatan Pengajar</label>
+                        <textarea name="catatan_pengajar" class="form-control" rows="3" placeholder="Evaluasi belajar murid..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-terracotta" style="width: 100%;">Simpan Jurnal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Panel Administrasi Pengajar</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/admin.js"></script>
+<li><a href="/admin/akun.html">Akun</a></li> pada <ul class="tab-list"></ul>
+
+</body>
+</html>

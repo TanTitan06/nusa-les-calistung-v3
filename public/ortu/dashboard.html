@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Orang Tua - Nusa Les Calistung</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-top">
+        <a href="/ortu/dashboard.html" class="brand-title">
+            Nusa Les Calistung <span class="brand-badge">Portal Orang Tua</span>
+        </a>
+        <div class="header-actions">
+            <a href="/index.html" class="btn btn-outline btn-sm">Beranda Web</a>
+            <button type="button" onclick="App.logout()" class="btn btn-danger btn-sm">Logout</button>
+        </div>
+    </div>
+    <nav class="tab-bar">
+        <div class="container">
+            <ul class="tab-list">
+                <li><a href="/ortu/dashboard.html" class="active">Laporan Perkembangan Anak</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div id="alertOrtu" class="alert hidden"></div>
+
+        <div class="card card-accent-top">
+            <div class="card-header">
+                <span id="sapaanOrtu">Memuat profil...</span>
+                <div id="pemilihAnak" class="inline-form"></div>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <span class="stat-label">Identitas Murid</span>
+                    <div class="stat-value" id="namaMurid">-</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;" id="infoMurid">-</p>
+                </div>
+                <div>
+                    <span class="stat-label">Capaian Belajar Terakhir</span>
+                    <div class="stat-value" style="color: var(--terracotta);" id="capaianTerakhir">-</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;" id="catatanTerakhir">-</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Riwayat Jurnal Pembelajaran</div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Jilid / Buku</th>
+                            <th>Halaman</th>
+                            <th>Catatan Pengajar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyJurnalOrtu">
+                        <tr><td colspan="4">Memuat data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-header">Riwayat Kehadiran</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal Pertemuan</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyHadirOrtu">
+                            <tr><td colspan="2">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Riwayat Pembayaran Les</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jenis</th>
+                                <th>Nominal</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyBayarOrtu">
+                            <tr><td colspan="4">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>&copy; 2026 Nusa Les Calistung</span>
+        <span>Portal Pemantauan Orang Tua</span>
+    </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/ortu.js"></script>
+</body>
+</html>
