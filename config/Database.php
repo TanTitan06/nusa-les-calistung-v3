@@ -2,10 +2,10 @@
 
 class Database
 {
-    private string $host = '127.0.0.1';
-    private string $dbName = 'NusaLesCalistung_db';
-    private string $username = 'root';
-    private string $password = '12345678';
+    private string $host = '';
+    private string $dbName = '';
+    private string $username = '';
+    private string $password = '';
     private string $charset = 'utf8mb4';
     private ?PDO $pdo = null;
 
